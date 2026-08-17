@@ -30,6 +30,9 @@ app.use(cors({ origin: process.env.CLIENT_ORIGIN || "http://localhost:5173", cre
 app.use(express.json());
 app.use(morgan("dev"));
 
+app.get("/", (req, res) => res.send("MediFinder API is running"));
+app.head("/", (req, res) => res.status(200).end());
+
 app.get("/api/health", async (req, res) => {
   try {
     await pool.query("SELECT 1");

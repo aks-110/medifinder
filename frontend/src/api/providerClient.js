@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const providerClient = axios.create({ baseURL: "/api" });
+const providerClient = axios.create({ baseURL: import.meta.env.VITE_API_URL || "/api" });
 
 providerClient.interceptors.request.use((config) => {
   const token = localStorage.getItem("mf_provider_access_token");
