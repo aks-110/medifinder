@@ -22,6 +22,10 @@ const tests = [
   { id: "t6", slug: "thyroid-profile", name: "Thyroid Profile (T3, T4, TSH)", category: "lab", description: "Checks thyroid hormone levels to diagnose thyroid disorders.", preparation: "No fasting required. Morning sample preferred.", reportTimeHours: 12 },
   { id: "t7", slug: "full-body-checkup", name: "Full Body Checkup", category: "package", description: "A comprehensive panel covering blood work, organ function, and vital screening tests.", preparation: "Fast for 10-12 hours before the appointment.", reportTimeHours: 24 },
   { id: "t8", slug: "diabetes-package", name: "Diabetes Package", category: "package", description: "Blood sugar, HbA1c, and related markers to monitor or screen for diabetes.", preparation: "Fast for 8 hours before the test.", reportTimeHours: 12 },
+  { id: "t9", slug: "ultrasound-abdomen", name: "Ultrasound - Whole Abdomen", category: "diagnostic", description: "An imaging test that uses sound waves to look at organs in the abdomen, including the liver, gallbladder, spleen, pancreas, and kidneys.", preparation: "Fast for 8-12 hours before the test. Drink water before the exam.", reportTimeHours: 4 },
+  { id: "t10", slug: "xray-knee", name: "X-Ray - Knee Joint", category: "diagnostic", description: "Imaging of the knee joint to check for fractures, arthritis, or other issues.", preparation: "No special preparation needed.", reportTimeHours: 2 },
+  { id: "t11", slug: "mri-spine", name: "MRI - Spine", category: "diagnostic", description: "Detailed imaging of the spine, looking at bones, discs, and nerves.", preparation: "Remove all metal objects.", reportTimeHours: 24 },
+  { id: "t12", slug: "vitamin-d", name: "Vitamin D Test", category: "lab", description: "Measures the level of vitamin D in your blood to check for bone health.", preparation: "No fasting required.", reportTimeHours: 12 },
 ];
 
 const providers = [
@@ -32,10 +36,10 @@ const providers = [
 ];
 
 const providerTests = {
-  p1: { t1: [500, 2], t2: [6500, 24], t3: [4200, 12], t4: [350, 6], t7: [2800, 24], t8: [900, 12] },
-  p2: { t1: [450, 3], t4: [280, 4], t5: [600, 8], t6: [750, 10], t7: [2400, 20], t8: [799, 10] },
-  p3: { t1: [700, 1], t2: [7200, 18], t3: [4800, 10], t4: [400, 5], t5: [650, 8], t7: [3200, 18] },
-  p4: { t1: [420, 4], t4: [250, 6], t5: [550, 10], t6: [700, 12], t8: [749, 14] },
+  p1: { t1: [500, 2], t2: [6500, 24], t3: [4200, 12], t4: [350, 6], t7: [2800, 24], t8: [900, 12], t9: [1500, 4], t10: [600, 2], t11: [7500, 24] },
+  p2: { t1: [450, 3], t4: [280, 4], t5: [600, 8], t6: [750, 10], t7: [2400, 20], t8: [799, 10], t12: [1200, 12] },
+  p3: { t1: [700, 1], t2: [7200, 18], t3: [4800, 10], t4: [400, 5], t5: [650, 8], t7: [3200, 18], t9: [1800, 4], t11: [8000, 18] },
+  p4: { t1: [420, 4], t4: [250, 6], t5: [550, 10], t6: [700, 12], t8: [749, 14], t12: [1100, 12] },
 };
 
 async function main() {
