@@ -1,6 +1,9 @@
 import axios from "axios";
 
-const baseURL = import.meta.env.VITE_API_URL || "/api";
+const envURL = import.meta.env.VITE_API_URL || "/api";
+const baseURL = envURL.startsWith("http") && !envURL.endsWith("/api") 
+  ? envURL.replace(/\/$/, "") + "/api" 
+  : envURL;
 const client = axios.create({ baseURL });
 
 client.interceptors.request.use((config) => {
